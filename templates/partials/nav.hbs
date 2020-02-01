@@ -1,0 +1,24 @@
+<nav>
+    <p style="margin: 0;">Copyrights &copy; 2020 By <a href="#">MOVA</a></p>
+    <ul>
+        <a href="/"><li>Home</li></a>
+        {{#if loggedIn}}
+        <a href="http://localhost:3000/upload"><li>Upload</li></a>
+        <a href="logout" id="logout"><li>Logout</li></a>
+        <form action="/users/me/logout" id="logout-form" method="POST"></form>
+        {{else}}
+        <a href="http://localhost:3000/login"><li>Login</li></a>
+        <a href="http://localhost:3000/signup"><li>Sign up</li></a>
+        {{/if}}
+    </ul>
+</nav>
+
+<script>
+    const logout = document.getElementById('logout')
+    if(logout){
+        logout.addEventListener('click', (e)=> {
+            e.preventDefault();
+            document.getElementById('logout-form').submit()
+        })
+    }
+</script>
