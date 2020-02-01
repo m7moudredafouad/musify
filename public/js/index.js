@@ -16,7 +16,7 @@ const playNow = (id) => {
         const html = `<h2 class="song__title">${data.name}</h2>
             <h4 style="font-size: 12px; margin: 5px 0 17px 0;">uploaded by ${data.artist}</h4>
             <audio id="player" onended="theCurrentAudioEnded()" controls autoplay>
-                <source src="http://localhost:3000/music/${id}" type="audio/mpeg">
+                <source src="/music/${id}" type="audio/mpeg">
                 Your browser dose not Support the audio Tag
             </audio>`
 
